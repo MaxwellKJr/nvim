@@ -1,7 +1,4 @@
 return {
-  "NvChad/nvim-colorizer.lua",
-  "HiPhish/nvim-ts-rainbow2",
-  "mrshmllow/document-color.nvim",
   {
     "ellisonleao/gruvbox.nvim",
     lazy = true,

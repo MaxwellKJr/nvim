@@ -1,4 +1,5 @@
 return {
+  "HiPhish/rainbow-delimiters.nvim",
   -- Treesitter
   {
     "nvim-treesitter/nvim-treesitter",
