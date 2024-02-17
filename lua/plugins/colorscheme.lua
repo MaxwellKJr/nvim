@@ -5,7 +5,7 @@ return {
     priority = 1000,
     config = true,
     opts = {
-      transparent_mode = false,
+      transparent_mode = true,
       terminal_colors = true, -- add neovim terminal colors
       contrast = "soft", -- can be "hard", "soft" or empty string
     },
