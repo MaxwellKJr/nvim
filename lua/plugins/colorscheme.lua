@@ -5,7 +5,7 @@ return {
     priority = 1000,
     config = true,
     opts = {
-      transparent_mode = true,
+      transparent_mode = false,
       terminal_colors = true, -- add neovim terminal colors
       contrast = "soft", -- can be "hard", "soft" or empty string
     },
@@ -15,7 +15,7 @@ return {
     lazy = false,
     priority = 1000,
     opts = {
-      transparent = true, -- Enable this to disable setting the background color
+      transparent = false, -- Enable this to disable setting the background color
       terminal_colors = true, -- Configure the colors used when opening a `:terminal` in [Neovim](https://github.com/neovim/neovim)
       styles = {
         -- Style to be applied to different syntax groups
@@ -25,15 +25,15 @@ return {
         functions = {},
         variables = {},
         -- Background styles. Can be "dark", "transparent" or "normal"
-        sidebars = "transparent", -- style for sidebars, see below
-        floats = "dark", -- style for floating windows
+        sidebars = "normal", -- style for sidebars, see below
+        floats = "normal", -- style for floating windows
       },
     },
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "gruvbox",
+      colorscheme = "catppuccin",
     },
   },
 }
