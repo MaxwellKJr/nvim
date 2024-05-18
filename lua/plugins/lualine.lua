@@ -45,10 +45,10 @@ return {
       options = {
         theme = bubbles_theme,
         component_separators = '',
-        section_separators = { left = '█', right = '█' },
+        section_separators = { left = '█', right = '' },
       },
       sections = {
-        lualine_a = { { 'mode', separator = { left = '█' }, right_padding = 2 } },
+        lualine_a = { { 'mode', separator = { left = '' }, right_padding = 2 } },
         lualine_b = { 'filename', 'branch' },
         lualine_c = {
           '%=', --[[ add your center compoentnts here in place of this comment ]]
@@ -63,7 +63,7 @@ return {
           },
         },
         lualine_x = {
-          -- stylua: ignore
+        -- stylua: ignore
         {
           function() return require("noice").api.status.command.get() end,
           cond = function() return package.loaded["noice"] and require("noice").api.status.command.has() end,
@@ -104,11 +104,11 @@ return {
         lualine_y = {
           'filetype',
           'progress',
-            { "progress", separator = " ", padding = { left = 1, right = 0 } },
+            { "progress", separator = " | ", padding = { left = 1, right = 0 } },
             { "location", padding = { left = 0, right = 1 } },
         },
         lualine_z = {
-          { 'location', separator = { right = '█' }, left_padding = 2,
+          { 'location', separator = { right = '█' }, left_padding = 2,
             function()
               return " " .. os.date("%R")
             end,

@@ -1,7 +1,5 @@
 {
   "extras": [
-    "lazyvim.plugins.extras.editor.aerial",
-    "lazyvim.plugins.extras.editor.outline",
     "lazyvim.plugins.extras.formatting.black",
     "lazyvim.plugins.extras.formatting.prettier",
     "lazyvim.plugins.extras.lang.json",
@@ -15,10 +13,12 @@
     "lazyvim.plugins.extras.util.dot",
     "lazyvim.plugins.extras.util.mini-hipatterns",
     "lazyvim.plugins.extras.util.project",
-    "lazyvim.plugins.extras.vscode"
+    "lazyvim.plugins.extras.vscode",
+    "lazyvim.plugins.extras.editor.aerial",
+    "lazyvim.plugins.extras.editor.outline"
   ],
   "news": {
-    "NEWS.md": "2123"
+    "NEWS.md": "3314"
   },
   "version": 3
 }
