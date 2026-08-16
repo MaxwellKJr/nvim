@@ -33,7 +33,7 @@ return {
             symbols = {
               added = " ", --  
               modified = "● ",
-              removed = " ",
+              removed = " ",
             },
           },
         },
@@ -58,12 +58,13 @@ return {
               for _, client in ipairs(clients) do
                 table.insert(names, client.name)
               end
-              return " LSP ~ " .. table.concat(names, ", ")
+              -- return " LSP ~ " .. table.concat(names, ", ")
+              return " " .. table.concat(names, ", ")
             end,
           },
           {
             "filetype",
-            icon_only = true, -- only the icon
+            icon_only = false, -- only the icon
             colored = true,
           },
           {
