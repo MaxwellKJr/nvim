@@ -4,17 +4,39 @@ return {
     "craftzdog/solarized-osaka.nvim",
     lazy = false,
     priority = 1000,
-    opts = {},
+    opts = {
+      transparent = true, -- Enable this to disable setting the background color
+      terminal_colors = true,
+      -- Background styles. Can be "dark", "transparent" or "normal"
+      styles = {
+        floats = "transparent",
+        sidebars = "transparent",
+      },
+    },
   },
-  -- -- Sonokai
+  -- Solarized (Broken)
   -- {
-  --   "sainnhe/sonokai",
+  --   "maxmx03/solarized.nvim",
   --   lazy = false,
   --   priority = 1000,
-  --   opts = {
-  --     sonokai_style = "andromeda", -- 'default', 'atlantis', 'andromeda', 'shusia', 'maia',
-  --   },
+  --   opts = {},
+  --   config = function(_, opts)
+  --     vim.o.termguicolors = true
+  --     vim.o.background = "dark"
+  --     require("solarized").setup(opts)
+  --     vim.cmd.colorscheme("solarized")
+  --   end,
   -- },
+  -- Sonokai
+  {
+    "sainnhe/sonokai",
+    lazy = true,
+    priority = 1000,
+    config = true,
+    opts = {
+      sonokai_style = "andromeda", -- 'default', 'atlantis', 'andromeda', 'shusia', 'maia',
+    },
+  },
   -- Gruvbox
   {
     "ellisonleao/gruvbox.nvim",
@@ -28,9 +50,12 @@ return {
     },
   },
   {
+    "HiPhish/rainbow-delimiters.nvim",
+  },
+  {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "solarized-osaka",
+      colorscheme = "solarized-osaka", -- "solarized-osaka" | "solarized-osaka-light" | "solarized-osaka-vivid"
     },
   },
 }
