@@ -1,5 +1,6 @@
 return {
-  -- Solarized Osaka
+  -- Solarized Osaka - "solarized-osaka" | "solarized-osaka-light" | "solarized-osaka-vivid"
+
   {
     "craftzdog/solarized-osaka.nvim",
     lazy = false,
@@ -14,19 +15,19 @@ return {
       },
     },
   },
-  -- Solarized (Broken)
-  -- {
-  --   "maxmx03/solarized.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  --   opts = {},
-  --   config = function(_, opts)
-  --     vim.o.termguicolors = true
-  --     vim.o.background = "dark"
-  --     require("solarized").setup(opts)
-  --     vim.cmd.colorscheme("solarized")
-  --   end,
-  -- },
+
+  -- OneDark
+  {
+    "navarasu/onedark.nvim",
+    priority = 1000, -- make sure to load this before all the other start plugins
+    config = function()
+      require("onedark").setup({
+        style = "darker",
+      })
+      -- require("onedark").load()
+    end,
+  },
+
   -- Sonokai
   {
     "sainnhe/sonokai",
@@ -37,25 +38,30 @@ return {
       sonokai_style = "andromeda", -- 'default', 'atlantis', 'andromeda', 'shusia', 'maia',
     },
   },
-  -- Gruvbox
+
+  -- Gruvbox Material
   {
-    "ellisonleao/gruvbox.nvim",
-    lazy = true,
+    "sainnhe/gruvbox-material",
+    lazy = false,
     priority = 1000,
-    config = true,
-    opts = {
-      transparent_mode = false,
-      terminal_colors = true, -- add neovim terminal colors
-      contrast = "hard", -- can be "hard", "soft" or empty string
-    },
+    config = function()
+      -- Optionally configure and load the colorscheme
+      -- directly inside the plugin declaration.
+      vim.g.gruvbox_material_enable_italic = true
+      -- vim.cmd.colorscheme("gruvbox-material")
+    end,
   },
+
+  -- Rainbow Brackets
   {
     "HiPhish/rainbow-delimiters.nvim",
   },
+
+  -- Activate
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "solarized-osaka", -- "solarized-osaka" | "solarized-osaka-light" | "solarized-osaka-vivid"
+      colorscheme = "solarized-osaka",
     },
   },
 }

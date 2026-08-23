@@ -64,7 +64,7 @@ return {
           },
           {
             "filetype",
-            icon_only = false, -- only the icon
+            icon_only = true, -- only the icon
             colored = true,
           },
           {
