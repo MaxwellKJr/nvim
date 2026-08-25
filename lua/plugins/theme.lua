@@ -10,8 +10,8 @@ return {
       terminal_colors = true,
       -- Background styles. Can be "dark", "transparent" or "normal"
       styles = {
-        floats = "transparent",
-        sidebars = "transparent",
+        floats = "normal",
+        sidebars = "normal",
       },
     },
   },

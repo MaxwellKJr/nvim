@@ -22,10 +22,10 @@
 return {
   {
     "neovim/nvim-lspconfig",
+    init = function()
+      vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+    end,
     opts = {
-      -- Enable documentation
-      vim.keymap.set("n", "K", vim.lsp.buf.hover, {}),
-
       -- Enable inlay hints globally
       inlay_hints = {
         enabled = true,
@@ -67,20 +67,15 @@ return {
         },
         laravel_lsp = {
           enabled = true,
+          cmd = { "laravel-lsp" },
+          filetypes = { "php", "blade" },
+          root_dir = function(bufnr, on_dir)
+            local root = vim.fs.root(bufnr, "artisan")
 
-          vim.lsp.config("laravel_lsp", {
-            cmd = { "laravel-lsp" },
-            filetypes = { "php", "blade" },
-            root_dir = function(bufnr, on_dir)
-              local root = vim.fs.root(bufnr, "artisan")
-
-              if root then
-                on_dir(root)
-              end
-            end,
-          }),
-
-          vim.lsp.enable("laravel_lsp"),
+            if root then
+              on_dir(root)
+            end
+          end,
         },
       },
     },
