@@ -65,7 +65,47 @@ return {
             },
           },
         },
+        laravel_lsp = {
+          enabled = true,
+
+          vim.lsp.config("laravel_lsp", {
+            cmd = { "laravel-lsp" },
+            filetypes = { "php", "blade" },
+            root_dir = function(bufnr, on_dir)
+              local root = vim.fs.root(bufnr, "artisan")
+
+              if root then
+                on_dir(root)
+              end
+            end,
+          }),
+
+          vim.lsp.enable("laravel_lsp"),
+        },
       },
     },
   },
+
+  -- { "neovim/nvim-lspconfig",
+  --   ft = { "php", "blade" },
+  --   config = function()
+  --     if vim.fn.executable("laravel-lsp") == 0 then
+  --       return
+  --     end
+  --
+  --     vim.lsp.config("laravel_lsp", {
+  --       cmd = { "laravel-lsp" },
+  --       filetypes = { "php", "blade" },
+  --       root_dir = function(bufnr, on_dir)
+  --         local root = vim.fs.root(bufnr, "artisan")
+  --
+  --         if root then
+  --           on_dir(root)
+  --         end
+  --       end,
+  --     })
+  --
+  --     vim.lsp.enable("laravel_lsp")
+  --   end,
+  -- },
 }
